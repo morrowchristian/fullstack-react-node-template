@@ -25,3 +25,12 @@ services:
     environment:
       - NODE_ENV=development
       - REACT_APP_API_URL=http://backend:5000
+      - WDS_SOCKET_PORT=0  # Disable WebSocket for React dev server
+    depends_on:
+      - backend
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge
