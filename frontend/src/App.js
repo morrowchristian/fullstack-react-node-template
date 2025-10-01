@@ -4,10 +4,13 @@ function App() {
   const [message, setMessage] = useState('');
 
   useEffect(() => {
-    fetch('http://backend:5000/api/hello')
+    fetch('/api/hello')
       .then(res => res.json())
       .then(data => setMessage(data.message))
-      .catch(err => console.error('Fetch error:', err));
+      .catch(err => {
+        console.error('Fetch error:', err);
+        setMessage('Error connecting to backend');
+      });
   }, []);
 
   return (

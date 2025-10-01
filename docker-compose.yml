@@ -12,6 +12,14 @@ services:
       - .:/workspace
     environment:
       - NODE_ENV=development
+    networks:
+      - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:5000/api/hello"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
   frontend:
     build:
@@ -24,12 +32,18 @@ services:
       - .:/workspace
     environment:
       - NODE_ENV=development
-      - REACT_APP_API_URL=http://backend:5000
-      - WDS_SOCKET_PORT=0  # Disable WebSocket for React dev server
+      - WDS_SOCKET_PORT=0
     depends_on:
-      - backend
+      backend:
+        condition: service_healthy
     networks:
       - app-network
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:3000"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
 
 networks:
   app-network:
