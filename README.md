@@ -26,5 +26,5 @@ A starter template for full-stack apps using React (frontend) and Node.js/Expres
 - `.devcontainer/Dockerfile` - Base image with Node.js v20, compatible with Codespaces.
 
 ## Community
-Join the conversation in our [Discussions](https://github.com/your-username/full-stack-react-node-template/discussions)!
+Join the conversation in our [Discussions](https://github.com/morrowchristian/fullstack-react-node-template/discussions)!
 
