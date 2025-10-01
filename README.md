@@ -23,7 +23,8 @@ A starter template for full-stack apps using React (frontend) and Node.js/Expres
 ## Notes
 - Proxy is set up to avoid CORS issues (frontend proxies to backend).
 - Extend with React Router, Redux, or a database as needed.
+- `.devcontainer/Dockerfile` - Base image with Node.js v20, compatible with Codespaces.
 
-### `.devcontainer/Dockerfile`
-Base image with Node.js v20, compatible with Codespaces.
+## Community
+Join the conversation in our [Discussions](https://github.com/your-username/full-stack-react-node-template/discussions)!
 
