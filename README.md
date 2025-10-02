@@ -1,30 +1,34 @@
 # Full-Stack React/Node.js Template
 
-A starter template for full-stack apps using React (frontend) and Node.js/Express (backend), optimized for GitHub Codespaces.
+A template for building full-stack apps with React, Node.js/Express, and MongoDB in GitHub Codespaces.
 
-## Setup
+## Quick Start
 
-1. Use this repo as a template: Click "Use this template" on GitHub.
-2. Create a Codespace: Click **Code > Codespaces > Create codespace on main**.
-3. Wait for the container to build (uses `.devcontainer`).
-4. Run the app:
+1. Create a Codespace: Click **Code > Codespaces > Create codespace on main**.
+2. Run the app:
    ```bash
-   docker-compose up
-   ```
-5. Access:
-- Frontend: http://localhost:3000
-- Backend: http://localhost:5000/api/hello
+   ./start.sh
+3. Open
+- Frontend: https://<your-codespace>-3000.app.github.dev/
+- Backend: https://<your-codespace>-5000.app.github.dev/api/hello 
 
-## Development
-- Frontend: cd frontend && npm start
-- Backend: cd backend && npm start
-- Add features (e.g., database, auth) as needed.
+## Features
 
-## Notes
-- Proxy is set up to avoid CORS issues (frontend proxies to backend).
-- Extend with React Router, Redux, or a database as needed.
-- `.devcontainer/Dockerfile` - Base image with Node.js v20, compatible with Codespaces.
+- Frontend: React with Tailwind CSS and React Router.
+- Backend: Express with hot reloading (nodemon) and MongoDB.
+- Docker: Pre-configured with docker-compose.yml for consistent environments.
+
+## Extending the App
+
+- Add React Components: Edit frontend/src/App.js or add new files in frontend/src.
+- Add Backend Routes: Modify backend/server.js (see /api/test example).
+- Use MongoDB: Query the myapp database via the /api/users endpoint.
 
 ## Community
+
 Join the conversation in our [Discussions](https://github.com/morrowchristian/fullstack-react-node-template/discussions)!
 
+## Troubleshooting
+
+- Check logs: docker-compose logs frontend or docker-compose logs backend.
+- Rebuild: docker-compose down && ./start.sh.
